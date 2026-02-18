@@ -56,10 +56,9 @@
 		</Card>
 
 		<Card title="Quick Actions">
-			<div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
-				<QuickLink href="https://classroom.google.com" label="GClassroom" icon={ExternalLink} />
+			<div class="grid grid-cols-1 gap-3 sm:grid-cols-1">
+				<QuickLink href="https://classroom.google.com" label="GClass" icon={ExternalLink} />
 				<QuickLink href="https://codechum.com" label="CodeChum" icon={Code} />
-				<QuickLink href="mailto:prof@university.edu" label="Email Prof" icon={Mail} />
 			</div>
 		</Card>
 	</section>

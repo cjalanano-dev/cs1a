@@ -9,24 +9,10 @@ export const academics = writable([]);
 const MOCK_ANNOUNCEMENTS = [
     {
         id: '1',
-        title: 'CMSC101 Payment Due',
-        message: 'Please pay ₱7 for the photocopying of handouts.',
-        urgency_level: 'High',
-        expiry_date: '2026-02-20'
-    },
-    {
-        id: '2',
-        title: 'No Class - ITEC103',
-        message: 'Prof. Smith is attending a conference. Free cut!',
+        title: 'FILDIS Performance Task',
+        message: 'Be ready to sing your respective songs.',
         urgency_level: 'Medium',
         expiry_date: '2026-02-19'
-    },
-    {
-        id: '3',
-        title: 'Welcome Party',
-        message: 'CS Dept welcome party this Friday at the gym.',
-        urgency_level: 'Low',
-        expiry_date: '2026-02-25'
     }
 ];
 
@@ -57,21 +43,51 @@ const MOCK_FINANCE = [
 const MOCK_ACADEMICS = [
     {
         subject_code: 'ITEC103',
-        professor: 'Prof. Ada Lovelace',
+        professor: 'Mr. Anthony Dorado',
         drive_link_reviewers: 'https://drive.google.com/drive/u/0/my-drive', // Placeholder
-        next_quiz_date: '2026-02-22'
+        next_quiz_date: null
     },
     {
         subject_code: 'CMSC101',
-        professor: 'Prof. Alan Turing',
+        professor: 'Ms. Kristine Arida',
         drive_link_reviewers: 'https://drive.google.com/drive/u/0/my-drive', // Placeholder
-        next_quiz_date: '2026-02-28'
+        next_quiz_date: null
     },
     {
-        subject_code: 'MATH014',
-        professor: 'Prof. Katherine Johnson',
+        subject_code: 'GEC103',
+        professor: 'Mr. Eugene Lopez',
         drive_link_reviewers: 'https://drive.google.com/drive/u/0/my-drive', // Placeholder
-        next_quiz_date: '2026-03-05'
+        next_quiz_date: null
+    },
+    {
+        subject_code: 'GEC104',
+        professor: 'Ms. Arlene Madrio',
+        drive_link_reviewers: 'https://drive.google.com/drive/u/0/my-drive', // Placeholder
+        next_quiz_date: null
+    },
+    {
+        subject_code: 'GEC105',
+        professor: 'Ms. Grace Suarez',
+        drive_link_reviewers: 'https://drive.google.com/drive/u/0/my-drive', // Placeholder
+        next_quiz_date: null
+    },
+    {
+        subject_code: 'FILDIS',
+        professor: 'Ms. Janine Balinsayo',
+        drive_link_reviewers: 'https://drive.google.com/drive/u/0/my-drive', 
+        next_quiz_date: null
+    },
+    {
+        subject_code: 'PATHFIT2',
+        professor: 'Mr. Renan Sael', 
+        drive_link_reviewers: 'https://drive.google.com/drive/u/0/my-drive',
+        next_quiz_date: null
+    },
+    {
+        subject_code: 'NSTP2',
+        professor: 'Prof. XYZ', 
+        drive_link_reviewers: 'https://drive.google.com/drive/u/0/my-drive',
+        next_quiz_date: null
     }
 ];
 

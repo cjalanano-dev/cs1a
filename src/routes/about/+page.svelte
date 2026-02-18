@@ -45,8 +45,21 @@
 
 <div class="mx-auto max-w-4xl space-y-8">
 	<header class="text-center">
-		<h1 class="mb-2 font-mono text-3xl font-bold text-white">Class Officers</h1>
-		<p class="text-zinc-400">Meet the people serving BSCS1A.</p>
+		<h1 class="mb-4 font-mono text-4xl font-bold tracking-tight text-white">
+			BSCS <span class="text-accent">1A</span>
+		</h1>
+
+		<div class="mx-auto mb-12 max-w-2xl space-y-4">
+			<p class="leading-relaxed text-zinc-300">
+				Welcome to the official portal for the <span class="font-bold text-white"
+					>Bachelor of Science in Computer Science - 1A</span
+				>. We are a community of aspiring developers, innovators, and problem-solvers.
+			</p>
+			<p class="text-sm text-zinc-400">"Turning coffee into code, and problems into solutions."</p>
+		</div>
+
+		<h2 class="mb-2 font-mono text-2xl font-bold text-white">Class Officers</h2>
+		<p class="text-sm tracking-widest text-zinc-500 uppercase">A.Y. 2025-2026 Semester 2</p>
 	</header>
 
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

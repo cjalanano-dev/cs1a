@@ -61,9 +61,9 @@
 	>
 		<div class="hidden border-b border-border p-6 lg:block">
 			<h1 class="font-mono text-2xl font-bold tracking-tighter text-accent">
-				BSCS1A<span class="text-white">_OS</span>
+				CS1A<span class="text-white">_Dashboard</span>
 			</h1>
-			<p class="mt-1 text-xs tracking-widest text-zinc-500 uppercase">Class Portal v1.0</p>
+			<p class="mt-1 text-xs tracking-widest text-zinc-500 uppercase">Class Portal v0.6</p>
 		</div>
 
 		<nav class="flex-1 space-y-1 overflow-y-auto px-3 py-6">
