@@ -37,7 +37,7 @@
 		class="fixed top-0 left-0 z-50 flex w-full items-center justify-between border-b border-border bg-surface/80 p-4 backdrop-blur-md lg:hidden"
 	>
 		<span class="font-mono text-xl font-bold tracking-tighter text-accent"
-			>CS1A<span class="text-white">OS</span></span
+			>CS1A<span class="text-white">Dashboard</span></span
 		>
 		<button
 			onclick={toggleMobileMenu}
@@ -55,7 +55,7 @@
 	<!-- Sidebar Navigation -->
 	<aside
 		class={`
-			fixed top-0 left-0 z-40 flex h-screen w-64 flex-col border-r border-border bg-surface transition-transform duration-300 ease-in-out lg:sticky
+			fixed top-0 left-0 z-40 flex h-screen w-64 flex-col border-r border-border bg-surface pt-16 transition-transform duration-300 ease-in-out lg:sticky lg:pt-0
 			${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
 		`}
 	>

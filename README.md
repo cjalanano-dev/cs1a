@@ -1,42 +1,55 @@
-# sv
+# CS1A Class Dashboard (BSCS 1A - LSPU SPCC)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A centralized class portal designed to streamline communication and transparency for the **Bachelor of Science in Computer Science - Section 1A**.
 
-## Creating a project
+This dashboard serves as the digital headquarters for the section, providing real-time updates on schedules, finances, and academic resources without the need for individual student logins.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```sh
-# create a new project
-npx sv create my-app
-```
+### 1. **Live Dashboard**
+- **Real-Time Status**: Displays the current class status (e.g., "Class in Session", "Lunch Break", "Free Cut") based on the official schedule.
+- **Urgent Ticker**: Marquee alert system for high-priority announcements (e.g., immediate contributions, cancellations).
+- **Quick Actions**: One-click access to essential tools like Google Classroom and CodeChum.
 
-To recreate this project with the same configuration:
+### 2. **Financial Transparency**
+- **Ledger Board**: A public, read-only view of class funds.
+- **Auto-Calculated Balance**: Real-time tracking of "Total Collected" vs. "Total Expenses" to show the current cash-on-hand.
+- **Proof of Transaction**: Links to receipts for every expense to ensure accountability.
 
-```sh
-# recreate this project
-bun x sv create --template minimal --no-types --add prettier tailwindcss="plugins:typography,forms" --install bun cs1a
-```
+### 3. **Academic Hub**
+- **Subject Cards**: Individual cards for each enrolled subject (e.g., CMSC 101, ITEC 103).
+- **Resource Access**: Dropdown menus providing direct links to:
+  - **Google Drive Reviewers**: Shared folders for study materials.
+  - **Syllabus**: The official course outline.
+- **Quiz Countdown**: Visual indicators for upcoming quizzes and exams.
 
-## Developing
+### 4. **Unified Calendar**
+- **Timeline View**: A chronological timeline merging academic deadlines (quizzes, projects) and general announcements.
+- **Smart Sorting**: Automatically dims past events and highlights upcoming ones.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### 5. **Class Officers**
+- **Contact Directory**: A list of current class officers with direct Email and Facebook links for concerns.
 
-```sh
-npm run dev
+---
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Tech Stack & Architecture
 
-## Building
+This project is built with a focus on **performance**, **simplicity**, and **aesthetic**.
 
-To create a production version of your app:
+- **Framework**: [SvelteKit](https://kit.svelte.dev/) (Svelte 5) - For a reactive, high-performance frontend.
+- **Styling**: [TailwindCSS v4](https://tailwindcss.com/) - Utilizing a custom "Zinc & Green" color palette for a modern, developer-centric look.
+- **Icons**: [Lucide-Svelte](https://lucide.dev/) - Clean, consistent SVG icons.
+- **Data Layer**:
+  - **Google Sheets as CMS**: The app fetches data directly from a published Google Sheet CSV. This allows officers to update content (announcements, finances) without touching a line of code.
+  - **PapaParse**: Used to parse the CSV data into usable JSON for the application state.
+  - **Svelte Stores**: Manages the application state (announcements, ledger, academics) globally.
 
-```sh
-npm run build
-```
+### Data Structure
+The application consumes data from three main sheets:
+1. **Announcements**: alerts, urgency levels, expiry dates.
+2. **Finance_Ledger**: transaction dates, amounts, types (collection/expense), receipts.
+3. **Academics**: subject codes, professors, resource links, quiz dates.
 
-You can preview the production build with `npm run preview`.
+---
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+*Verified and maintained by Carlos James Alanano.*
