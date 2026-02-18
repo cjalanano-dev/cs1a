@@ -1,19 +1,25 @@
 <script>
 	import Card from '$lib/components/Card.svelte';
 	import QuickLink from '$lib/components/QuickLink.svelte';
-	import { User, Facebook, Send, Mail } from 'lucide-svelte';
+	import { User, Facebook } from 'lucide-svelte';
 
-	const officers = [
+	const executive = [
 		{
 			role: 'President',
 			name: 'Carlos James Alanano',
 			fb: '#'
-		},
+		}
+	];
+
+	const leadership = [
 		{
 			role: 'Vice President',
 			name: 'Aisheeya Cariaga',
 			fb: '#'
-		},
+		}
+	];
+
+	const administrative = [
 		{
 			role: 'Secretary',
 			name: 'Camille Banaag',
@@ -28,13 +34,18 @@
 			role: 'Auditor',
 			name: 'Edmund Saab',
 			fb: '#'
-		},
+		}
+	];
+
+	const representatives = [
 		{
 			role: 'Representative',
 			name: 'Cahrl Jamora',
 			fb: '#'
 		}
 	];
+
+	const sections = [executive, leadership, administrative, representatives];
 </script>
 
 <div class="mx-auto max-w-4xl space-y-8">
@@ -56,28 +67,34 @@
 		<p class="text-sm tracking-widest text-zinc-500 uppercase">A.Y. 2025-2026 Semester 2</p>
 	</header>
 
-	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-		{#each officers as officer}
-			<Card className="flex flex-col items-center text-center">
-				<div
-					class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800"
-				>
-					<User class="h-10 w-10 text-zinc-500" />
-				</div>
+	<div class="space-y-8">
+		{#each sections as section}
+			<div class="flex flex-wrap justify-center gap-6">
+				{#each section as officer}
+					<div class="w-full max-w-xs md:w-[calc(33.333%-1.5rem)]">
+						<Card className="flex h-full flex-col items-center text-center">
+							<div
+								class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800"
+							>
+								<User class="h-10 w-10 text-zinc-500" />
+							</div>
 
-				<h2 class="text-lg font-bold text-white">{officer.name}</h2>
-				<span class="mb-6 font-mono text-xs tracking-wider text-accent uppercase"
-					>{officer.role}</span
-				>
+							<h2 class="text-lg font-bold text-white">{officer.name}</h2>
+							<span class="mb-6 font-mono text-xs tracking-wider text-accent uppercase"
+								>{officer.role}</span
+							>
 
-				<div class="mt-auto grid w-full grid-cols-1 gap-3">
-					<QuickLink
-						href={officer.fb}
-						icon={Facebook}
-						className="justify-center px-2 py-2 text-xs"
-					/>
-				</div>
-			</Card>
+							<div class="mt-auto grid w-full grid-cols-1 gap-3">
+								<QuickLink
+									href={officer.fb}
+									icon={Facebook}
+									className="justify-center px-2 py-2 text-xs"
+								/>
+							</div>
+						</Card>
+					</div>
+				{/each}
+			</div>
 		{/each}
 	</div>
 </div>
