@@ -24,5 +24,11 @@
 		"svelte": "^5.49.2",
 		"tailwindcss": "^4.1.18",
 		"vite": "^7.3.1"
+	},
+	"dependencies": {
+		"clsx": "^2.1.1",
+		"lucide-svelte": "^0.574.0",
+		"papaparse": "^5.5.3",
+		"tailwind-merge": "^3.4.1"
 	}
 }
