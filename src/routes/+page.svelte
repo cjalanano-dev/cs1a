@@ -38,6 +38,30 @@
 		});
 </script>
 
+<!-- Urgent Ticker -->
+{#if urgentAnnouncements.length > 0}
+	<div class="relative mb-4 overflow-hidden border-y border-red-900/50 bg-red-950/30">
+		<div class="flex animate-[ticker_14s_linear_infinite] gap-16 px-4 whitespace-nowrap">
+			{#each urgentAnnouncements as announcement}
+				<span class="inline-flex items-center gap-2 font-mono font-bold text-red-400 uppercase">
+					<Megaphone class="h-4 w-4" />
+					ALERT: {announcement.title} — {announcement.message}
+				</span>
+			{/each}
+			<!-- Duplicate for seamless loop -->
+			{#each urgentAnnouncements as announcement}
+				<span
+					class="inline-flex items-center gap-2 font-mono font-bold text-red-400 uppercase"
+					aria-hidden="true"
+				>
+					<Megaphone class="h-4 w-4" />
+					ALERT: {announcement.title} — {announcement.message}
+				</span>
+			{/each}
+		</div>
+	</div>
+{/if}
+
 <div class="space-y-8">
 	<!-- Hero Section -->
 	<section class="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -62,30 +86,6 @@
 			</div>
 		</Card>
 	</section>
-
-	<!-- Urgent Ticker -->
-	{#if urgentAnnouncements.length > 0}
-		<div class="relative overflow-hidden border-y border-red-900/50 bg-red-950/30 py-3">
-			<div class="flex animate-[ticker_20s_linear_infinite] gap-16 px-4 whitespace-nowrap">
-				{#each urgentAnnouncements as announcement}
-					<span class="inline-flex items-center gap-2 font-mono font-bold text-red-400 uppercase">
-						<Megaphone class="h-4 w-4" />
-						ALERT: {announcement.title} — {announcement.message}
-					</span>
-				{/each}
-				<!-- Duplicate for seamless loop -->
-				{#each urgentAnnouncements as announcement}
-					<span
-						class="inline-flex items-center gap-2 font-mono font-bold text-red-400 uppercase"
-						aria-hidden="true"
-					>
-						<Megaphone class="h-4 w-4" />
-						ALERT: {announcement.title} — {announcement.message}
-					</span>
-				{/each}
-			</div>
-		</div>
-	{/if}
 
 	<!-- Announcements Grid -->
 	<section>

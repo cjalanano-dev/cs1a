@@ -53,7 +53,7 @@
 			<p class="leading-relaxed text-zinc-300">
 				Welcome to the official portal for the <span class="font-bold text-white"
 					>Bachelor of Science in Computer Science - 1A</span
-				>. We are a community of aspiring developers, innovators, and problem-solvers.
+				> from LSPU - SPCC. We are a community of aspiring developers, innovators, and problem-solvers.
 			</p>
 			<p class="text-sm text-zinc-400">"Turning coffee into code, and problems into solutions."</p>
 		</div>
