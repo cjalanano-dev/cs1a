@@ -66,7 +66,7 @@
 		{#each officers as officer}
 			<Card className="flex flex-col items-center text-center">
 				<div
-					class="mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800"
+					class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800"
 				>
 					<User class="h-10 w-10 text-zinc-500" />
 				</div>

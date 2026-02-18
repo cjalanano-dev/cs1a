@@ -18,14 +18,47 @@ export function formatCurrency(amount) {
  * @returns {string}
  */
 export function getClassStatus(date) {
-    const hour = date.getHours();
+    // Schedule: 0=Sun, 1=Mon, ..., 6=Sat
+    const schedule = {
+        1: [ // Monday
+            { start: 9.0, end: 10.0, name: 'GEC 103 (Lec 5)' },
+            { start: 11.0, end: 14.0, name: 'ITEC 103 (Lab 3)' },
+            { start: 14.0, end: 15.0, name: 'GEC 105 (Lec 9)' }
+        ],
+        2: [ // Tuesday
+            { start: 7.0, end: 8.0, name: 'ITEC 103 (Lec 10)' },
+            { start: 8.0, end: 10.0, name: 'GEC 103 (Lec 8 & 11)' },
+            { start: 11.0, end: 12.0, name: 'CMSC 101 (Lec 11)' },
+            { start: 12.5, end: 14.0, name: 'PE 2 (Gym)' },
+            { start: 15.0, end: 16.0, name: 'GEC 104 (Lec 5)' }
+        ],
+        3: [ // Wednesday
+            { start: 9.0, end: 10.0, name: 'FILDIS (Lec 11)' },
+            { start: 11.0, end: 12.0, name: 'CMSC 101 (Lec 11)' },
+            { start: 12.0, end: 14.0, name: 'GEC 105 (Lec 11)' },
+            { start: 15.0, end: 17.0, name: 'GEC 104 (Lec 12)' }
+        ],
+        4: [ // Thursday
+            { start: 11.0, end: 12.0, name: 'CMSC 101 (Lec 9)' },
+            { start: 12.0, end: 14.0, name: 'FILDIS (Lec 11)' },
+            { start: 15.0, end: 16.0, name: 'ITEC 103 (Lec 10)' }
+        ]
+    };
+
+    const hour = date.getHours() + date.getMinutes() / 60;
     const day = date.getDay(); // 0 = Sunday, 6 = Saturday
 
-    if (day === 0 || day === 6) return 'Weekend Break';
+    if (day === 0 || day === 6 || !schedule[day]) return 'Weekend / No Class';
 
-    if (hour >= 12 && hour < 13) return 'Lunch Break';
-    if (hour >= 7 && hour < 17) return 'Class in Session';
-    return 'Free Cut / Off-Hours';
+    const todayClasses = schedule[day];
+    const currentClass = todayClasses.find(c => hour >= c.start && hour < c.end);
+
+    if (currentClass) return currentClass.name;
+
+    // Check if it's during the school day (7am - 6pm) but no class
+    if (hour >= 7 && hour < 18) return 'Free Cut / Break';
+
+    return 'Dismissed';
 }
 
 /**
