@@ -46,12 +46,18 @@
 				{/if}
 
 				<!-- Resources Buttons -->
-				<div class="mt-auto space-y-3">
+				<div class="mt-auto grid grid-cols-1 gap-3 sm:grid-cols-2">
 					<QuickLink
 						href={subject.drive_link_reviewers}
-						label="Open Reviewers"
+						label="Subject Resources"
 						icon={FolderOpen}
-						className="w-full justify-center bg-zinc-800 hover:bg-zinc-700"
+						className="justify-center bg-zinc-800 hover:bg-zinc-700 text-xs"
+					/>
+					<QuickLink
+						href={subject.syllabus_link || '#'}
+						label="View Syllabus"
+						icon={BookOpen}
+						className="justify-center bg-zinc-800 hover:bg-zinc-700 text-xs"
 					/>
 				</div>
 			</Card>
