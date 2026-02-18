@@ -7,38 +7,32 @@
 		{
 			role: 'President',
 			name: 'Carlos James Alanano',
-			fb: '#',
-			email: '#'
+			fb: '#'
 		},
 		{
 			role: 'Vice President',
 			name: 'Aisheeya Cariaga',
-			fb: '#',
-			email: '#'
+			fb: '#'
 		},
 		{
 			role: 'Secretary',
 			name: 'Camille Banaag',
-			fb: '#',
-			email: '#'
+			fb: '#'
 		},
 		{
 			role: 'Treasurer',
 			name: 'Unnoh Medina',
-			fb: '#',
-			email: '#'
+			fb: '#'
 		},
 		{
 			role: 'Auditor',
 			name: 'Edmund Saab',
-			fb: '#',
-			email: '#'
+			fb: '#'
 		},
 		{
 			role: 'Representative',
 			name: 'Cahrl Jamora',
-			fb: '#',
-			email: '#'
+			fb: '#'
 		}
 	];
 </script>
@@ -76,29 +70,14 @@
 					>{officer.role}</span
 				>
 
-				<div class="mt-auto grid w-full grid-cols-2 gap-3">
+				<div class="mt-auto grid w-full grid-cols-1 gap-3">
 					<QuickLink
 						href={officer.fb}
-						label="FB"
 						icon={Facebook}
-						className="justify-center px-2 py-2 text-xs"
-					/>
-					<QuickLink
-						href={officer.email}
-						label="Email"
-						icon={Mail}
 						className="justify-center px-2 py-2 text-xs"
 					/>
 				</div>
 			</Card>
 		{/each}
-	</div>
-
-	<div class="mt-12 rounded-lg border border-zinc-800 bg-zinc-900/30 p-8 text-center">
-		<h3 class="mb-2 font-mono text-xl font-bold text-white">Got Concerns?</h3>
-		<p class="mb-6 text-zinc-400">Reach out to us directly or drop a message in the group chat.</p>
-		<div class="flex justify-center">
-			<QuickLink href="#" label="Open Class Group Chat" icon={Send} className="w-auto px-8" />
-		</div>
 	</div>
 </div>
