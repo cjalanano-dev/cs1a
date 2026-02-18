@@ -55,7 +55,7 @@
 	<!-- Sidebar Navigation -->
 	<aside
 		class={`
-			fixed top-0 left-0 z-40 flex h-screen w-64 flex-col border-r border-border bg-surface transition-transform duration-300 ease-in-out lg:sticky
+			fixed top-0 left-0 z-40 flex h-screen w-64 flex-col border-r border-border bg-surface pt-16 transition-transform duration-300 ease-in-out lg:sticky lg:pt-0
 			${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
 		`}
 	>
