@@ -37,7 +37,7 @@
 		class="fixed top-0 left-0 z-50 flex w-full items-center justify-between border-b border-border bg-surface/80 p-4 backdrop-blur-md lg:hidden"
 	>
 		<span class="font-mono text-xl font-bold tracking-tighter text-accent"
-			>CS1A<span class="text-white">OS</span></span
+			>CS1A<span class="text-white">Dashboard</span></span
 		>
 		<button
 			onclick={toggleMobileMenu}
