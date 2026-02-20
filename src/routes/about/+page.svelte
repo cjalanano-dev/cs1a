@@ -162,4 +162,11 @@
 			</div>
 		{/each}
 	</div>
+
+	<footer class="mt-16 border-t border-zinc-800 pt-8 text-center">
+		<p class="text-sm text-zinc-500">
+			Built by <span class="text-zinc-300">Carlos James Alanano</span> and maintained by
+			<span class="text-zinc-300">CS1A Officers</span>.
+		</p>
+	</footer>
 </div>
