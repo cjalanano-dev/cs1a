@@ -21,26 +21,26 @@
 	}
 </script>
 
-<Card className="h-full flex flex-col relative group overflow-visible">
+<Card className="h-full flex flex-col relative group overflow-visible border border-border/80 p-5">
 	<!-- Subject Header -->
-	<div class="mb-4 flex items-start justify-between">
+	<div class="mb-5 flex items-start justify-between">
 		<div>
-			<h2 class="text-2xl font-bold tracking-tight text-white">{subject.subject_code}</h2>
-			<div class="mt-1 flex items-center gap-2 text-sm text-zinc-400">
-				<User class="h-4 w-4" />
+			<h2 class="text-xl font-bold tracking-tight text-text-main">{subject.subject_code}</h2>
+			<div class="mt-1.5 flex items-center gap-2 text-xs text-text-muted">
+				<User class="h-3.5 w-3.5 text-text-muted" />
 				<span>{subject.professor}</span>
 			</div>
 		</div>
 
 		<button
 			onclick={toggleDropdown}
-			class="rounded-lg bg-zinc-800/50 p-2 transition-colors hover:bg-zinc-700 hover:text-white"
+			class="rounded-xl border border-border bg-surface/40 p-2.5 transition-all duration-300 hover:border-accent/40 hover:bg-surface/80"
 			aria-label="Toggle Resources"
 		>
 			{#if isOpen}
-				<ChevronUp class="h-6 w-6 text-accent transition-colors" />
+				<ChevronUp class="h-4 w-4 text-accent transition-colors" />
 			{:else}
-				<ChevronDown class="h-6 w-6 text-zinc-500 transition-colors group-hover:text-white" />
+				<ChevronDown class="h-4 w-4 text-text-muted transition-colors group-hover:text-text-main" />
 			{/if}
 		</button>
 	</div>
@@ -48,14 +48,14 @@
 	<!-- Next Quiz Countdown -->
 	{#if subject.next_quiz_date}
 		<div
-			class="mb-6 flex items-center gap-3 rounded-lg border border-zinc-700/50 bg-zinc-900/50 p-3"
+			class="mb-4 flex items-center gap-3 rounded-xl border border-border bg-surface/30 p-3.5"
 		>
-			<CalendarClock class="h-5 w-5 text-accent" />
+			<CalendarClock class="h-4.5 w-4.5 text-accent" />
 			<div>
-				<div class="font-mono text-xs text-zinc-500 uppercase">Next Quiz</div>
-				<div class="text-sm font-bold text-white">
+				<div class="font-mono text-[9px] font-bold text-text-muted uppercase tracking-wider">Next Quiz</div>
+				<div class="text-xs font-semibold text-text-main mt-0.5">
 					{subject.next_quiz_date}
-					<span class="text-accent">({timeUntil(subject.next_quiz_date)})</span>
+					<span class="text-accent font-bold">({timeUntil(subject.next_quiz_date)})</span>
 				</div>
 			</div>
 		</div>
@@ -66,20 +66,20 @@
 		{#if isOpen}
 			<div
 				transition:slide={{ duration: 200 }}
-				class="space-y-2 overflow-hidden border-t border-zinc-800/50 pt-4"
+				class="space-y-2 overflow-hidden border-t border-border/50 pt-4"
 			>
-				<h3 class="mb-2 font-mono text-xs font-bold text-zinc-500 uppercase">Resources</h3>
+				<h3 class="mb-2 font-mono text-[9px] font-bold text-zinc-500 uppercase tracking-widest">Resources</h3>
 				<QuickLink
 					href={subject.drive_link_reviewers}
-					label="Google Drive"
+					label="Google Drive Link"
 					icon={FolderOpen}
-					className="justify-center bg-zinc-800/50 hover:bg-zinc-700/80 text-xs border-zinc-700"
+					className="justify-center bg-surface/40 hover:bg-surface/80 text-[10px] py-2 border-border"
 				/>
 				<QuickLink
 					href={subject.syllabus_link || '#'}
-					label="Syllabus"
+					label="Syllabus Document"
 					icon={BookOpen}
-					className="justify-center bg-zinc-800/50 hover:bg-zinc-700/80 text-xs border-zinc-700"
+					className="justify-center bg-surface/40 hover:bg-surface/80 text-[10px] py-2 border-border"
 				/>
 			</div>
 		{/if}

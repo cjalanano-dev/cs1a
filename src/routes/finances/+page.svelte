@@ -21,6 +21,7 @@
 	let currentBalance = $derived(totalCollected - totalExpenses);
 
 	// Table Configuration
+	// Table Configuration
 	const columns = [
 		{ key: 'date', label: 'Date' },
 		{ key: 'transaction_name', label: 'Description' },
@@ -28,7 +29,7 @@
 			key: 'category',
 			label: 'Type',
 			format: (val) =>
-				`<span class="${val === 'Collection' ? 'text-green-400' : 'text-red-400'} font-bold uppercase text-xs">${val}</span>`,
+				`<span class="${val === 'Collection' ? 'text-emerald-400 border-emerald-500/10 bg-emerald-500/5' : 'text-red-400 border-red-500/10 bg-red-500/5'} border rounded px-1.5 py-0.5 font-mono text-[9px] font-bold tracking-wider uppercase">${val}</span>`,
 			html: true
 		},
 		{
@@ -41,58 +42,64 @@
 			label: 'Proof',
 			format: (val) =>
 				val && val !== '#'
-					? `<a href="${val}" target="_blank" class="text-accent hover:underline text-xs">View Receipt</a>`
-					: '<span class="text-zinc-600 text-xs">N/A</span>',
+					? `<a href="${val}" target="_blank" class="text-accent hover:underline text-[10px] font-bold tracking-wider uppercase">View Receipt</a>`
+					: '<span class="text-zinc-600 text-[10px] font-bold tracking-wider uppercase">N/A</span>',
 			html: true
 		}
 	];
 </script>
 
-<div class="space-y-8">
-	<header>
-		<h1 class="mb-2 font-mono text-3xl font-bold text-white">Class Finances</h1>
-		<p class="text-zinc-400">Transparency board for all class funds and expenses.</p>
+<div class="space-y-10">
+	<header class="border-b border-border/60 pb-4">
+		<h1 class="font-mono text-xl font-bold text-text-main tracking-wider uppercase">Class Finances</h1>
+		<p class="text-xs text-text-muted font-mono mt-1.5 uppercase tracking-wider">Transparency board for all class funds and expenses</p>
 	</header>
 
 	<!-- Summary Cards -->
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-		<Card className="relative overflow-hidden">
-			<div class="mb-4 flex items-start justify-between">
-				<div class="rounded-lg bg-green-900/30 p-2">
-					<ArrowDownLeft class="h-6 w-6 text-green-400" />
+		<Card className="relative overflow-hidden border border-border/80 p-6 flex flex-col justify-between">
+			<div class="mb-6 flex items-start justify-between">
+				<div class="rounded-xl border border-emerald-500/15 bg-emerald-500/5 p-2.5">
+					<ArrowDownLeft class="h-5 w-5 text-emerald-400" />
 				</div>
-				<span class="font-mono text-xs text-zinc-500 uppercase">Total In</span>
+				<span class="font-mono text-[10px] text-text-muted font-bold uppercase tracking-wider">Total In</span>
 			</div>
-			<div class="font-mono text-3xl font-bold text-white">{formatCurrency(totalCollected)}</div>
-			<div class="mt-1 text-sm text-zinc-500">This Semester</div>
+			<div>
+				<div class="font-mono text-2xl font-bold text-text-main tracking-tight">{formatCurrency(totalCollected)}</div>
+				<div class="mt-1 text-[10px] font-mono text-text-muted uppercase tracking-wider">Current Semester</div>
+			</div>
 		</Card>
 
-		<Card className="relative overflow-hidden">
-			<div class="mb-4 flex items-start justify-between">
-				<div class="rounded-lg bg-red-900/30 p-2">
-					<ArrowUpRight class="h-6 w-6 text-red-400" />
+		<Card className="relative overflow-hidden border border-border/80 p-6 flex flex-col justify-between">
+			<div class="mb-6 flex items-start justify-between">
+				<div class="rounded-xl border border-red-500/15 bg-red-500/5 p-2.5">
+					<ArrowUpRight class="h-5 w-5 text-red-400" />
 				</div>
-				<span class="font-mono text-xs text-zinc-500 uppercase">Total Out</span>
+				<span class="font-mono text-[10px] text-text-muted font-bold uppercase tracking-wider">Total Out</span>
 			</div>
-			<div class="font-mono text-3xl font-bold text-white">{formatCurrency(totalExpenses)}</div>
-			<div class="mt-1 text-sm text-zinc-500">This Semester</div>
+			<div>
+				<div class="font-mono text-2xl font-bold text-text-main tracking-tight">{formatCurrency(totalExpenses)}</div>
+				<div class="mt-1 text-[10px] font-mono text-text-muted uppercase tracking-wider">Current Semester</div>
+			</div>
 		</Card>
 
-		<Card className="relative overflow-hidden border-accent/20">
-			<div class="mb-4 flex items-start justify-between">
-				<div class="rounded-lg bg-accent/10 p-2">
-					<Wallet class="h-6 w-6 text-accent" />
+		<Card className="relative overflow-hidden border border-accent/20 p-6 flex flex-col justify-between">
+			<div class="mb-6 flex items-start justify-between">
+				<div class="rounded-xl border border-accent/20 bg-accent/5 p-2.5 animate-pulse">
+					<Wallet class="h-5 w-5 text-accent" />
 				</div>
-				<span class="font-mono text-xs text-zinc-500 uppercase">Current Balance</span>
+				<span class="font-mono text-[10px] text-text-muted font-bold uppercase tracking-wider">Current Balance</span>
 			</div>
-			<div class="font-mono text-4xl font-bold text-accent">{formatCurrency(currentBalance)}</div>
-			<div class="mt-1 text-sm text-zinc-500">Cash on Hand</div>
+			<div>
+				<div class="font-mono text-3xl font-extrabold text-accent tracking-tight">{formatCurrency(currentBalance)}</div>
+				<div class="mt-1 text-[10px] font-mono text-text-muted uppercase tracking-wider">Cash on Hand</div>
+			</div>
 		</Card>
 	</div>
 
 	<!-- Ledger Table -->
-	<section>
-		<h2 class="mb-4 font-mono text-xl font-bold text-white">Transaction Ledger</h2>
+	<section class="space-y-4">
+		<h2 class="font-mono text-xs font-bold text-text-muted uppercase tracking-widest">Transaction Ledger</h2>
 		<DataTable data={$financeLedger} {columns} />
 	</section>
 </div>

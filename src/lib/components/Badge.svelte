@@ -5,11 +5,11 @@
 	let { label, variant = 'default', className = '' } = $props();
 
 	const variants = {
-		default: 'bg-zinc-800 text-zinc-300 border-zinc-700',
-		high: 'bg-red-950/50 text-red-400 border-red-900 animate-pulse',
-		medium: 'bg-amber-950/50 text-amber-400 border-amber-900',
-		low: 'bg-emerald-950/50 text-emerald-400 border-emerald-900',
-		success: 'bg-green-950/50 text-green-400 border-green-900'
+		default: 'bg-zinc-900/60 text-zinc-400 border-zinc-800',
+		high: 'bg-red-500/5 text-red-400 border-red-500/20 shadow-[0_0_12px_rgba(239,68,68,0.04)]',
+		medium: 'bg-amber-500/5 text-amber-400 border-amber-500/20',
+		low: 'bg-blue-500/5 text-blue-400 border-blue-500/20',
+		success: 'bg-emerald-500/5 text-emerald-400 border-emerald-500/20'
 	};
 
 	// Map urgency string to variant if needed
@@ -19,7 +19,7 @@
 		if (lower.includes('high') || lower.includes('urgent')) return 'high';
 		if (lower.includes('medium')) return 'medium';
 		if (lower.includes('low')) return 'low';
-		if (lower.includes('session')) return 'success';
+		if (lower.includes('session') || lower.includes('collection')) return 'success';
 		return 'default';
 	};
 
@@ -30,7 +30,7 @@
 
 <span
 	class={twMerge(
-		'rounded border px-2 py-1 font-mono text-xs font-bold tracking-wide uppercase',
+		'inline-flex items-center rounded-full border px-2 py-0.5 font-mono text-[10px] font-semibold tracking-wider uppercase transition-colors duration-200',
 		computedVariant,
 		className
 	)}

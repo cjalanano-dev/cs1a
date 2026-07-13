@@ -2,17 +2,12 @@
 	let { title, children, className = '' } = $props();
 </script>
 
-<div class="glass-panel group relative overflow-hidden rounded-lg p-6 {className}">
-	<!-- Subtle Glow Effect -->
-	<div
-		class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-50 transition-opacity group-hover:opacity-100"
-	></div>
-
+<div class="border border-border bg-surface/30 p-6 transition-colors duration-200 hover:border-zinc-800 {className}">
 	{#if title}
-		<h3 class="mb-4 font-mono text-xl font-bold tracking-wider text-accent uppercase">{title}</h3>
+		<h3 class="mb-5 font-mono text-[10px] font-bold tracking-widest text-zinc-500 uppercase">{title}</h3>
 	{/if}
 
-	<div class="relative z-10">
+	<div class="w-full">
 		{@render children()}
 	</div>
 </div>

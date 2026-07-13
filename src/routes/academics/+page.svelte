@@ -3,10 +3,10 @@
 	import SubjectCard from './SubjectCard.svelte';
 </script>
 
-<div class="space-y-8">
-	<header>
-		<h1 class="mb-2 font-mono text-3xl font-bold text-white">Subjects</h1>
-		<p class="text-zinc-400">Subject resources, syllabus, and reviewers.</p>
+<div class="space-y-10">
+	<header class="border-b border-border/60 pb-4">
+		<h1 class="font-mono text-xl font-bold text-text-main tracking-wider uppercase">Academic Subjects</h1>
+		<p class="text-xs text-text-muted font-mono mt-1.5 uppercase tracking-wider">Resources, syllabi, and reviewers</p>
 	</header>
 
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
